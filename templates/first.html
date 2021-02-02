@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+{% block content %}
+<form method="POST" action="{{url_for('index')}}">
+    <input type="text" value="{{valueInput}}">
+    <br>
+    <button type="submit" style="border: none;padding: 0;background: none;" value="{{valueButton}}">{{valueButton}}</button>
+</form>
+{% endblock %}
