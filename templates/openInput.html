@@ -7,11 +7,12 @@
         <h1 
             style="border: none;padding: 0;background: none;" value="{{literal}}"
             v-on:click="opened = !opened"
+            class="clickable"
         >
             {{literal}}
         </h1>
        
-        <div v-if="opened" class="open">
+        <div v-show="opened">
             <input type="text" name="input1">
             <input type="text" name="input2">
             <button type="submit">Submit</button>

@@ -5,3 +5,6 @@
 .close {
   visibility: hidden;
 }
+.clickable:hover {
+  cursor: pointer;
+}
