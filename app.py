@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import json
 
 app = Flask(__name__)
 
@@ -15,16 +16,19 @@ def index():
 
 @app.route("/open_input", methods=["GET", "POST"])
 def openInput():
-    literal = "Object"
+    literals = ["Object1", "Object2", "Object3", "Object4"]
     value = ""
     input1 = ""
     input2 = ""
     if request.method == "POST":
-        value = literal
         input1 = request.form["input1"]
         input2 = request.form["input2"]
     return render_template(
-        "openInput.html", literal=literal, value=value, input1=input1, input2=input2
+        "openInput.html",
+        literals=literals,
+        input1=input1,
+        input2=input2,
+        literalsJson=json.dumps(literals),
     )
 
 
